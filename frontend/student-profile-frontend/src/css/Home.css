@@ -1,0 +1,87 @@
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 1.2fr;
+}
+
+.right .left {
+  width: 100%;
+}
+
+.big-title,
+.text {
+  color: #14213d;
+}
+
+.left {
+  line-height: 3rem;
+  text-align: left;
+}
+
+.right-pic {
+  width: 100%;
+}
+
+.orange{
+    color: #fca311;
+}
+
+.landing-btn {
+  border-radius: 3px;
+  box-sizing: border-box;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
+  color: #39739d;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+    sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px 0.8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  margin-right: 1rem;
+}
+
+.landing-btn:hover,
+.landing-btn:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+.landing-btn:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+
+/* .landing-btn:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+} */
+
+
+@media screen and (max-width: 900px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .left{
+        line-height: 2.5rem;
+    }
+    .big-title{
+        font-size: .9rem;
+    }
+    .text{
+        font-size: .9rem;
+    }
+}

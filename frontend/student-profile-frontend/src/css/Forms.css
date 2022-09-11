@@ -1,0 +1,125 @@
+.form-container{
+    height: fit-content;
+    margin: auto;
+    margin-top: 3rem;
+    width: 100%;
+    max-width: 568px;
+    /* border: 1px solid; */
+    border-radius: .25rem;
+    padding: 1rem;
+}
+
+.form-name{
+    font-size: 24px;
+    font-weight: 600;
+    color: #14213d;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+	position: relative;
+	padding: 10px 0 0;
+	margin-top: 1rem;
+    width: 100%;
+}
+
+.input-field {
+	font-family: inherit;
+	border: 0;
+	border-bottom: 1px solid #9b9b9b;
+	outline: 0;
+	font-size: 1rem;
+	color: #14213d;
+	padding: 7px 0;
+	transition: border-color 0.2s;
+    width: 100%;
+}
+
+.input-field::placeholder {
+	color: transparent;
+}
+
+.input-field:placeholder-shown ~ .input-label {
+	font-size: 1rem;
+	cursor: text;
+	top: 20px;
+}
+
+.input-label {
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: .8rem;
+	color: #9b9b9b;
+    pointer-events: none;
+}
+
+.input-field:focus {
+	padding-bottom: 6px;
+	border-width: 2px;
+	border-image: linear-gradient(to right, #fca311, #14213d);
+	border-image-slice: 1;
+}
+
+.input-field:focus ~ .input-label {
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: .8rem;
+	color: #fca311;
+}
+
+.input-field:required, .input-field:invalid {
+	box-shadow: none;
+}
+
+.login-btn {
+  background-color: #f8f9fa;
+  border: 1px solid #14213d;
+  border-radius: 4px;
+  color: #3c4043;
+  cursor: pointer;
+  font-family: arial,sans-serif;
+  font-size: 18px;
+  height: 36px;
+  line-height: 27px;
+  min-width: 54px;
+  padding: 0 25px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+}
+
+.login-btn:hover {
+  box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+  color: #202124;
+}
+
+.forget{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.remember-box{
+    width: fit-content;
+    height: max-content;
+}
+
+.remember-box label{
+    margin-left: 1rem;
+}
+
+.login-btn:focus {
+  border-color: #4285f4;
+  outline: none;
+}
+
+.to-nxt{
+    margin-top: 1rem;
+}
