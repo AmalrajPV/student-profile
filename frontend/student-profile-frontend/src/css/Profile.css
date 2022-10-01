@@ -168,3 +168,49 @@
     width: 100%;
   }
 }
+
+.edit-close{
+  display: none !important;
+}
+
+.edit-btn{
+  display: flex;
+  height: 2rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.edit-toggle{
+  margin-left: 1rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.seperator{
+  margin: .5rem 0;
+}
+
+.edit-openable{
+  display: flex;
+  flex-grow: 1;
+  border: 1px solid gray;
+}
+
+.edit-in{
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: .5rem;
+  color: #14213d;
+}
+
+.edit-send, .edit-toggle{
+  width: 2.5rem;
+  height: 100%;
+}
+
+.edit-send{
+  border: none;
+  height: 100%;
+}

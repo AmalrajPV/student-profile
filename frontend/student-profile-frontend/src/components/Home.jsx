@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "../css/Home.css";
 import { motion } from "framer-motion";
+import image from "../photos/landing-img.webp";
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
     >
       <div className="right">
         <img
-          src="https://img.freepik.com/free-vector/cv-best-candidate-mans-hands-flat-vector-illustration-company-looking-employee-headhunter-hiring-people-human-resource-management-job-interview-concept_74855-24461.jpg?w=2000"
+          src={image}
           alt="Person Image"
           className="right-pic"
         />

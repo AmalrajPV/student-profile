@@ -16,24 +16,31 @@ import {
   faGithubSquare,
 } from "@fortawesome/free-brands-svg-icons";
 import "../css/Profile.css";
-import { UlBox, RegularBox, ProfileBox } from "./Boxes";
+import { UlBox, RegularBox, ProfileBox, ProfileBoxScout } from "./Boxes";
 import { motion } from "framer-motion";
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <motion.div
       className="prof-container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: .7 }}
+      transition={{ duration: 0.7 }}
     >
       <div className="left-box">
-        <ProfileBox
-          username={"amalraj"}
-          email={"amalraj@gmail.com"}
-          logged={true}
+        {props.scout ? (
+          <ProfileBoxScout
+          username={props.data.user?.username}
+          email={props.data.user?.email}
         />
+        ) : (
+          <ProfileBox
+            username={props.data.user?.username}
+            email={props.data.user?.email}
+            logged={props.logged}
+          />
+        )}
         <div className="box">
           <div className="socials">
             <a
@@ -83,7 +90,7 @@ const Profile = () => {
         <RegularBox
           icon={<FontAwesomeIcon className="orange" icon={faAddressCard} />}
           content={
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos sit architecto maxime distinctio commodi temporibus, animi nemo? Labore aut aliquam consectetur saepe a sunt. Velit commodi eius eligendi minima incidunt."
+            props.data?.about
           }
           title={"Bio"}
         />
@@ -91,12 +98,12 @@ const Profile = () => {
         <div className="prof-container">
           <UlBox
             title={"Education"}
-            items={["lorem", "ipsum", "dolor", "amet"]}
+            items={props.data?.education}
             icon={<FontAwesomeIcon className="orange" icon={faGraduationCap} />}
           />
           <UlBox
             title={"Experience"}
-            items={["lorem", "ipsum", "dolor", "amet"]}
+            items={props.data?.experience}
             icon={<FontAwesomeIcon className="orange" icon={faBriefcase} />}
           />
         </div>
@@ -104,12 +111,12 @@ const Profile = () => {
         <div className="prof-container">
           <UlBox
             title={"Skills"}
-            items={["lorem", "ipsum", "dolor", "amet"]}
+            items={props.data?.skills}
             icon={<FontAwesomeIcon className="orange" icon={faCogs} />}
           />
           <UlBox
             title={"Projects"}
-            items={["lorem", "ipsum", "dolor", "amet"]}
+            items={props.data?.projects}
             icon={<FontAwesomeIcon className="orange" icon={faIndustry} />}
           />
         </div>
