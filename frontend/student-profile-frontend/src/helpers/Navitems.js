@@ -4,12 +4,12 @@ const NavItems = [
         path:"/",
     },
     {
-        name:"My Profile",
-        path:"profile",
-    },
-    {
         name:"Users",
         path:"users",
+    },
+    {
+        name:"My Profile",
+        path:"profile",
     },
     {
         name:"Contact",

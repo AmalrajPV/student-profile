@@ -14,7 +14,7 @@ const Users = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: .7 }}
     >
-      {data.map((item, index)=>
+      {data?.map((item, index)=>
       <ProfileBox key={index} username={item.user?.username} email={item.user?.email} viewlink={`/users/${item.user?._id}`} />
       )}
     </motion.div>

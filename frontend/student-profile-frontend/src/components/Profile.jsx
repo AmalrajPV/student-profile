@@ -36,8 +36,8 @@ const Profile = (props) => {
         />
         ) : (
           <ProfileBox
-            username={props.data.user?.username}
-            email={props.data.user?.email}
+            username={props.data?.user?.username}
+            email={props.data?.user?.email}
             logged={props.logged}
           />
         )}
@@ -98,12 +98,12 @@ const Profile = (props) => {
         <div className="prof-container">
           <UlBox
             title={"Education"}
-            items={props.data?.education}
+            items={props?.data?.education}
             icon={<FontAwesomeIcon className="orange" icon={faGraduationCap} />}
           />
           <UlBox
             title={"Experience"}
-            items={props.data?.experience}
+            items={props?.data?.experience}
             icon={<FontAwesomeIcon className="orange" icon={faBriefcase} />}
           />
         </div>
@@ -111,12 +111,12 @@ const Profile = (props) => {
         <div className="prof-container">
           <UlBox
             title={"Skills"}
-            items={props.data?.skills}
+            items={props?.data?.skills}
             icon={<FontAwesomeIcon className="orange" icon={faCogs} />}
           />
           <UlBox
             title={"Projects"}
-            items={props.data?.projects}
+            items={props?.data?.projects}
             icon={<FontAwesomeIcon className="orange" icon={faIndustry} />}
           />
         </div>

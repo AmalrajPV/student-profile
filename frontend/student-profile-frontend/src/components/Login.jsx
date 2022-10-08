@@ -2,7 +2,8 @@ import "../css/Forms.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import {useAuth} from "../helpers/loginContext";
 
 
 const Login = () => {
@@ -10,7 +11,11 @@ const Login = () => {
         email: undefined,
         password: undefined
     });
+    const auth = useAuth();
     let navigate = useNavigate();
+    const location = useLocation();
+
+    const reqpath = location.state?.path || '/'
 
     const handleChange = (e) =>{
         setUserData(prev => ({...prev, [e.target.name]:e.target.value}));
@@ -19,8 +24,9 @@ const Login = () => {
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try {
-            await axios.post("/auth/login", userdata);
-            navigate("/");
+            const data = await axios.post("/auth/login", userdata);
+                auth.login(data.data);
+                navigate(reqpath , {replace: true});
         } catch (error) {
             console.log(error);
         }

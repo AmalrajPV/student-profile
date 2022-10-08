@@ -11,11 +11,13 @@ import Myprofile from "./Myprofile";
 import ScoutProfile from "./ScoutProfile";
 import EditProfile from "./EditProfile";
 import PrivateRoute from "./ProtectedRoute";
+import { AuthProvider, useAuth } from "../helpers/loginContext";
+
 
 
 const App = () => {
   return (
-    <>
+    <AuthProvider>
       <Headers></Headers>
       <main className="main-container">
       <div className="showcase-area">
@@ -27,7 +29,7 @@ const App = () => {
         <Route path="/users/:id" element={<ScoutProfile />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
-        <Route element={<PrivateRoute token={false} />}>
+        <Route element={<PrivateRoute />}>
           <Route path="profile" element={<Myprofile />} />
           <Route path="profile/edit" element={<EditProfile />} />
           <Route path="contact" element={<Contact />} />
@@ -37,7 +39,7 @@ const App = () => {
 
       </div>
       </main>
-    </>
+    </AuthProvider>
   );
 };
 

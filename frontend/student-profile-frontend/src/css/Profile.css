@@ -159,6 +159,39 @@
   padding-left: 0.5rem;
 }
 
+.rbi-input{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+.rbi-input input{
+  outline: none;
+  padding: .25rem;
+  flex-grow: 9;
+  margin-right: 5px;
+}
+
+.rbi-input button{
+  flex-grow: 1;
+  background-color: #f28919;
+  border: 1px solid #14213d;
+  color: #14213d;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.rbi-input button:hover{
+  background-color: #f49e43;
+}
+
+.rbi-list-del button{
+  float: right;
+  margin-right: 1rem;
+  cursor: pointer;
+  /* background-color: red; */
+}
+
 @media screen and (max-width: 900px) {
   .prof-container {
     flex-direction: column;

@@ -8,9 +8,11 @@ import {
 import "../css/Header.css";
 import NavItems from "../helpers/Navitems";
 import { NavLink, Link } from "react-router-dom";
+import { useAuth } from "../helpers/loginContext";
 
 
 const Headers = () => {
+  const auth = useAuth();
   return (
     <header>
       <nav>
@@ -22,18 +24,20 @@ const Headers = () => {
         <div className="content">
           <div className="logo">
             <Link className="logolink" to={"/"}><span className="logo-first">Student</span> Profile</Link>
-            {/* <a href="#" className="logolink"><span className="logo-first">Student</span> Profile</a> */}
           </div>
           <ul className="links">
             {
                 NavItems.map((data, index)=>
                     <li className="listitems" key={index}>
                       <NavLink className="navlink" activeclassname="active" to={data.path}>{data.name}</NavLink>
-                      {/* <a className="navlink" href={data.path}>{data.name}</a> */}
                     </li>
                 )
             }
-            {/* <li className="listitems" ><a className="navlink lgbtn">Login</a></li> */}
+            {
+              (auth.user)?
+              <li className="listitems" ><button className="lgbtn" onClick={()=>{auth.logout()}}>Logout</button></li>:
+              <li className="listitems" ><NavLink className="lgbtn" to={"login"}>Login</NavLink></li>
+            }
           </ul>
         </div>
         <label htmlFor="show-search" className="search-icon">
